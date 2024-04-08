@@ -1,6 +1,11 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
+
+Object.assign(global, {
+  BASE_URL: process.env.BASE_URL,
+});
+
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
