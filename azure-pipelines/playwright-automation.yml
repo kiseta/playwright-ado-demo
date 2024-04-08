@@ -1,0 +1,19 @@
+pool:
+  vmImage: 'windows-latest'
+
+trigger:
+  branches:
+    include:
+      - 'main'
+
+name: $(Build.BuildId)
+
+stages:
+
+  - stage: qa
+    displayName: 'Run Automation Test - QA'
+    dependsOn: []
+    jobs:
+      - template: playwright_template.yml
+        parameters:
+          BASE_URL: ''
