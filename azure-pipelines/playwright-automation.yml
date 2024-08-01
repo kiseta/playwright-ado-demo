@@ -14,6 +14,6 @@ stages:
     displayName: 'Run Automation Test - QA'
     dependsOn: []
     jobs:
-      - template: playwright_template.yml
+      - template: playwright-template.yml
         parameters:
           BASE_URL: 'https://playwright.dev/'
