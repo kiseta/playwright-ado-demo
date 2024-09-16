@@ -28,7 +28,7 @@ Before you begin, ensure you have the following prerequisites:
 1.  On your local machine open the cloned GitHub repo in Visual Studio Code (VSCode).
 2.  Create a `.gitignore` file and add the following directories:
 
-```
+```bash
 node_modules/
 test-results/
 tests-examples/
@@ -44,7 +44,7 @@ playwright/.cache/
 2.  After the installation, Playwright generates example tests including a test file named `tests/example.spec.js` that contains two basic tests navigating to the Playwright Home Page URL and doing validations.
 3.  Run the tests with the command `npx playwright test`
 
-```
+```js
 // example.spec.js 
 const { test, expect } = require('@playwright/test');
 test('has title', async ({ page }) => {
@@ -65,7 +65,7 @@ test('get started link', async ({ page }) => {
 
 1.  Open the `playwright.config.js` file in VSCode and add the following:
 
-```
+```bash
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 /**
@@ -129,7 +129,7 @@ module.exports = defineConfig({
 1.  Run Playwright test using `npx playwright test` command
 2.  Optionally update package.json file with the following to run Playwright tests with the shortened test execution command `npm test`
 
-```
+```bash
 "scripts": {
     "test": "npx playwright test --workers=1"
   },
@@ -198,7 +198,7 @@ Before we can create a pipeline in Azure DevOps, we need to add YAML files to ou
 7.  Publish Pipeline Artifacts: Publishes the archived files as pipeline artifacts.
 8.  Publish Test Results: Publishes the test results in JUnit format with the title "Playwright ADO Demo — $(System.StageName)".
 
-```
+```yaml
 parameters:
   - name: BASE_URL
     type: string
@@ -255,7 +255,7 @@ Edit the `playwright-automation.yml` file:
 *   Open the `playwright-automation.yml` file in Visual Studio Code.
 *   Add the necessary YAML code to define the pipeline for running your Playwright tests. This file will include steps to install dependencies, build the project, and run the Playwright tests.
 
-```
+```yaml
 pool:
   vmImage: 'windows-latest'
 trigger:
@@ -347,7 +347,7 @@ To add a pipeline parameters to our example we going to modify project files as 
 
 1.  Update Playwright tests in **example.spec.js** to use a global variable for website URL. Optionally, add a log statement to see how the global variable value is used in the test.
 
-```
+```js
 // @ts-check
 const { test, expect } = require('@playwright/test');
 test('has title', async ({ page }) => {
@@ -379,7 +379,7 @@ Object.assign(global, {
 
 3. Update **playwright-automation.yml** with the BASE_URL value:
 
-```
+```yaml
 pool:
   vmImage: 'windows-latest'
 trigger:
@@ -399,7 +399,7 @@ stages:
 
 4. Confirm **playwright-template.yml** file has BASE_URL parameter referenced as follows:
 
-```
+```yaml
 parameters:
   - name: BASE_URL
 ...
