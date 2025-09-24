@@ -334,16 +334,15 @@ Now we can create a new pipeline in Azure DevOps, select a Git repository, and c
 
 *   NOTE: Your Playwright tests are now set up to run automatically in Azure DevOps whenever you push changes to your Git repository.
 
-Adding Pipeline Parameters
+**Adding Pipeline Parameters**
 
+Adding pipeline parameters in Azure DevOps:
 
-Adding pipeline parameters in Azure DevOps can be beneficial for several reasons.
-
-*   It allows for greater flexibility and reusability of pipelines.
+*   Allows for greater flexibility and reusability of pipelines.
 *   By defining parameters, you can customize the behavior of your pipeline based on different scenarios, such as deploying to different environments or running different sets of tests.
 *   This flexibility reduces the need to create multiple similar pipelines, simplifying your pipeline configuration and maintenance.
 
-To add a pipeline parameters to our example we going to modify project files as follows:
+To add a pipeline parameters to this example, modify project files as follows:
 
 1.  Update Playwright tests in **example.spec.js** to use a global variable for website URL. Optionally, add a log statement to see how the global variable value is used in the test.
 
